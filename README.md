@@ -11,7 +11,7 @@ Installation
 
 * Run `docker-compose up -d`.
 * Next, `composer install`
-* Add the next line in the host file (/etc/hosts)
+* Add the next line in the hosts file (/etc/hosts)
 ```
     127.0.0.1       local.coffee-marketplace.com
 ```  
