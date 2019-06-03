@@ -16,17 +16,27 @@ Installation
     127.0.0.1       local.coffee-marketplace.com
 ```  
 
-* Check the domain [local.coffee-marketplace.com][4].
+* Domain [local.coffee-marketplace.com][4].
+
+
+Usage
+---------
+These are some examples to use the API.
+
+https://documenter.getpostman.com/view/6606267/S1TWzGor?version=latest
+
+
 
 References
 ---------
 
 * [Symfony][1].
+* [View Routes in Postman][5]
 
 
 [1]: https://symfony.com
 [2]: https://getcomposer.org/
 [3]: https://www.docker.com/
 [4]: http://local.coffee-marketplace.com
-
+[5]: https://documenter.getpostman.com/view/6606267/S1TWzGor?version=latest
 
