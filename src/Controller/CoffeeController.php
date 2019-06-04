@@ -11,11 +11,10 @@ use PhpParser\Node\Scalar\MagicConst\Dir;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\DependencyInjection\Container;
 use FOS\RestBundle\Controller\Annotations\Delete;
-
-
+use FOS\RestBundle\Controller\Annotations\Get;
+use FOS\RestBundle\Controller\Annotations\Put;
 
 /**
  * Coffee controller.
@@ -28,7 +27,7 @@ class CoffeeController extends AbstractFOSRestController
 
     /**
      * Get all Coffee.
-     * @Rest\GET("/coffee/{id}", name="coffee")
+     * @Get("/coffee/{id}", name="coffee")
      *
      * @return Response
      */
@@ -46,7 +45,7 @@ class CoffeeController extends AbstractFOSRestController
 
     /**
      * Create new Coffee.
-     * @Rest\PUT("/coffee/new", name="coffee_new")
+     * @Put("/coffee/new", name="coffee_new")
      *
      * @return Response
      */
@@ -75,7 +74,6 @@ class CoffeeController extends AbstractFOSRestController
         $logger = new Logger('channel-name');
         $logger->pushHandler(new StreamHandler( $this->getParameter('root.log').'/info.log', Logger::DEBUG));
         $logger->info('SET COFFE => {'. "$nameRequest , $intensityRequest , $priceRequest , $quantityRequest" . '}');
-
 
         return $this->view('User: '. $coffee->getName(). ' was added successfully', Response::HTTP_OK);
     }

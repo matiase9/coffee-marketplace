@@ -3,6 +3,8 @@ FROM php:7.2-fpm
 # Install recommended extensions for Symfony
 RUN apt-get update && apt-get install -y \
         libicu-dev \
+        curl \
+        vim \
     && docker-php-ext-install \
         intl \
         opcache \
@@ -17,3 +19,7 @@ RUN docker-php-ext-install gd
 
 # Permission fix
 RUN usermod -u 1000 www-data
+
+
+RUN curl -sS https://getcomposer.org/installer | \
+  php -- --install-dir=/usr/local/bin --filename=composer

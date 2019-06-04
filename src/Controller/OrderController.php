@@ -11,7 +11,7 @@ use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use FOS\RestBundle\Controller\Annotations as Rest;
+use FOS\RestBundle\Controller\Annotations\Post;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 
@@ -23,7 +23,7 @@ class OrderController extends AbstractFOSRestController
 {
     /**
      * New Order.
-     * @Rest\Post("/order/new", name="order_new")
+     * @Post("/order/new", name="order_new")
      *
      * @return Response
      */
