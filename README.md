@@ -22,8 +22,6 @@ Installation
     127.0.0.1       local.coffee-marketplace.com
 ```  
 
-* Domain [local.coffee-marketplace.com][4]
-
 * Run dummy data to create the access users
 ```
     // Access PHP container
@@ -37,9 +35,15 @@ Api
 ---
 - USER
 With the Dummy data we have two users created:
+
 CUSTOMER: 
-> username => customer
-> password => customer123
+> `username => customer` \
+> `password => customer123`
+
+ADMIN:
+> `username => admin`\
+> `password => admin123`
+
 
 ```
     http://local.coffee-marketplace.com/api/login_check
@@ -63,7 +67,8 @@ https://documenter.getpostman.com/view/6606267/S1TWzGor?version=latest
 
 Test Case
 ---------
-I created a test case to User connection. This test is compatible with Mac users.
+I created a test case to User connection. This test is compatible with Mac users.\
+
 To run the test:
 - Connect to container PHP
 ```

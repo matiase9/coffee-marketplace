@@ -17,9 +17,10 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get install -y zip unzip zlib1g-dev libpng-dev
 RUN docker-php-ext-install gd
 
-# Permission fix
-RUN usermod -u 1000 www-data
-
-
 RUN curl -sS https://getcomposer.org/installer | \
   php -- --install-dir=/usr/local/bin --filename=composer
+
+# Set www-data as owner for /var/www
+RUN usermod -u 1000 www-data
+RUN chown -R www-data:www-data /var/www/
+RUN chmod -R g+w /var/www/
