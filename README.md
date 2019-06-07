@@ -13,23 +13,29 @@ Installation
 ```
     docker-compose up -d
 ``` 
-* Next
+* Access to PHP container (coffee-php)
+```
+    docker exec -it coffee-php /bin/bash
+```
+* Run composer
 ```
     composer install
 ```
-* Add the next line in the hosts file (/etc/hosts)
+
+* Update Database Schema
 ```
-    127.0.0.1       local.coffee-marketplace.com
-```  
+    bin/console doctrine:schema:update --force
+```
 
 * Run dummy data to create the access users
 ```
-    // Access PHP container
-    docker exec -it coffee-php /bin/bash
-    
-    // Run
     bin/console doctrine:fixtures:load
 ```
+
+* Exit the container and add the next line in the hosts file (/etc/hosts)
+```
+    127.0.0.1       local.coffee-marketplace.com
+```  
 
 Api
 ---
