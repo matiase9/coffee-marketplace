@@ -82,7 +82,7 @@ To run the test:
 ```
 - Run the command
 ```
-    bin/phpunit test/UserTest.php
+    bin/phpunit tests/UserTest.php
 ```
 
 Pending
