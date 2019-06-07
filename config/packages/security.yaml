@@ -41,6 +41,7 @@ security:
           - { path: ^/api/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
           - { path: ^/api/coffee/new, roles: ROLE_ADMIN }
           - { path: ^/api/coffee/delete/, roles: ROLE_ADMIN }
+          - { path: ^/api/order/new, roles: ROLE_ADMIN }
 
 
     role_hierarchy:
