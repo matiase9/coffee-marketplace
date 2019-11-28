@@ -76,7 +76,7 @@ To run the test:
 ```
 - Run the command
 ```
-    bin/phpunit tests/UserTest.php
+    bin/phpunit tests/ProductTest.php
 ```
 
 References
