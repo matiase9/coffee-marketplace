@@ -13,9 +13,9 @@ Installation
 ```
     docker-compose up -d
 ``` 
-* Access to PHP container (coffee-php)
+* Access to PHP container (market-php)
 ```
-    docker exec -it coffee-php /bin/bash
+    docker exec -it market-php /bin/bash
 ```
 * Run composer
 ```
@@ -34,7 +34,7 @@ Installation
 
 * Exit the container and add the next line in the hosts file (/etc/hosts)
 ```
-    127.0.0.1       local.coffee-marketplace.com
+    127.0.0.1       local.market
 ```  
 
 Api
@@ -52,53 +52,40 @@ ADMIN:
 
 
 ```
-    http://local.coffee-marketplace.com/api/login_check
+    http://local.market/api/login_check
 ```
-- COFFEE
+- PRODUCT
 ```
-    http://local.coffee-marketplace.com/api/coffee/{id}
-    http://local.coffee-marketplace.com/api/coffee/new
-    http://local.coffee-marketplace.com/api/coffee/delete/{id}
+    http://local.market/api/product/{id}
+    http://local.market/api/product/new
+    http://local.market/api/product/delete/{id}
 ```
 - ORDER
 ```
-    http://local.coffee-marketplace.com/api/order/new
+    http://local.market/api/order/new
 ```
-
-Examples
----------
-These are some examples to use the API.
-
-https://documenter.getpostman.com/view/6606267/S1TWzGor?version=latest
 
 Test Case
 ---------
-I created a test case to User connection. This test is compatible with Mac users.\
+I created a test case to User connection.
 
 To run the test:
 - Connect to container PHP
 ```
-    docker exec -it coffee-php /bin/bash
+    docker exec -it market-php /bin/bash
 ```
 - Run the command
 ```
     bin/phpunit tests/UserTest.php
 ```
 
-Pending
--------
- - Update services to Coffee Model.
- - Test cases to Coffee and Order services.
-
 References
 ---------
 
 * [Symfony][1].
-* [View Routes in Postman][5]
 
 [1]: https://symfony.com
 [2]: https://getcomposer.org/
 [3]: https://www.docker.com/
-[4]: http://local.coffee-marketplace.com
-[5]: https://documenter.getpostman.com/view/6606267/S1TWzGor?version=latest
+[4]: http://local.market
 

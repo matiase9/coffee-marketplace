@@ -25,7 +25,7 @@ class Order
     /**
      * @ORM\Column(type="integer")
      */
-    private $coffee_id;
+    private $product_id;
 
     /**
      * @ORM\Column(type="float")
@@ -36,6 +36,11 @@ class Order
      * @ORM\Column(type="integer")
      */
     private $quantity;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $status_id;
 
     public function getId(): ?int
     {
@@ -54,14 +59,14 @@ class Order
         return $this;
     }
 
-    public function getCoffeeId(): ?int
+    public function getProductId(): ?int
     {
-        return $this->coffee_id;
+        return $this->product_id;
     }
 
-    public function setCoffeeId(int $coffee_id): self
+    public function setProductId(int $product_id): self
     {
-        $this->coffee_id = $coffee_id;
+        $this->product_id = $product_id;
 
         return $this;
     }
@@ -86,6 +91,18 @@ class Order
     public function setQuantity(int $quantity): self
     {
         $this->quantity = $quantity;
+
+        return $this;
+    }
+
+    public function getStatusId(): ?int
+    {
+        return $this->status_id;
+    }
+
+    public function setStatusId(int $statusId): self
+    {
+        $this->status_id = $statusId;
 
         return $this;
     }

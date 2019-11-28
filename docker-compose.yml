@@ -2,7 +2,7 @@ version: '2'
 services:
   php:
       build: ./docker/images/php/
-      container_name: coffee-php
+      container_name: market-php
       environment:
         TIMEZONE: ${TIMEZONE}
       env_file: .env
@@ -17,7 +17,7 @@ services:
   web:
     image: nginx:latest
     env_file: .env
-    container_name: coffee-nginx
+    container_name: market-nginx
     ports:
     ## BEGIN webserver_ports ##
       - "${HTTP_BINDED_PORT}:80"
@@ -41,7 +41,7 @@ services:
 
   mysql:
     image: mysql:${MYSQL_VERSION}
-    container_name: coffee-mysql
+    container_name: market-mysql
     env_file: .env
     ports:
       - "${DATABASE_BINDED_PORT}:3306"

@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\CoffeeRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\ProductRepository")
  */
-class Coffee
+class Product
 {
     /**
      * @ORM\Id()
@@ -20,11 +20,6 @@ class Coffee
      * @ORM\Column(type="string", length=255)
      */
     private $name;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $intensity;
 
     /**
      * @ORM\Column(type="float")
@@ -48,19 +43,7 @@ class Coffee
 
     public function setName(string $name): self
     {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    public function getIntensity(): ?int
-    {
-        return $this->intensity;
-    }
-
-    public function setIntensity(int $intensity): self
-    {
-        $this->intensity = $intensity;
+        $this->name = trim($name);
 
         return $this;
     }
